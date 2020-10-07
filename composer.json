@@ -3,7 +3,7 @@
     "description": "Utilidades para desarrollar en SuiteCRM",
     "type": "library",
     "require": {
-        "php": ">=7.3.0",
+        "php": ">=5.5.9",
         "kevinrob/guzzle-cache-middleware": "^3.3",
         "symfony/cache": "^5.1",
         "gmponos/guzzle_logger": "^2.0",
