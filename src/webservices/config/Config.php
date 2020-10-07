@@ -39,4 +39,12 @@ final class Config implements ConfigInterface
     {
         return (int) $this->config['cache_lifetime'];
     }
+
+    public function getValueByKey(string $key)
+    {
+        if(!empty($key)) {
+            return $this->config[$key];
+        }
+        throw new \Exception((string) sprintf('%s is empty', $key));
+    }
 }

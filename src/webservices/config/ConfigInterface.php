@@ -8,4 +8,5 @@ interface ConfigInterface
     public function getBaseURI() :string;
     public function getWebServiceName() :string;
     public function getCacheLifeTime() :int;
+    public function getValueByKey(string $key);
 }
