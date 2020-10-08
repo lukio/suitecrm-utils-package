@@ -2,7 +2,7 @@
 
 namespace Gcoop\Log;
 
-use GuzzleLogMiddleware\LoggerMiddleware;
+use GuzzleLogMiddleware\LogMiddleware;
 use GuzzleLogMiddleware\Handler\MultiRecordArrayHandler;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -22,7 +22,7 @@ final class LogMiddlewareFactory
         $stream->setFormatter(new LineFormatter($format));
         $logger->pushHandler($stream);
         $handler = new MultiRecordArrayHandler();
-        $middleware = new LoggerMiddleware($logger, $handler);
+        $middleware = new LogMiddleware($logger, $handler);
 
         return $middleware;
     }
