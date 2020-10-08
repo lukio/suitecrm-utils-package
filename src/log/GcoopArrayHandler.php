@@ -2,10 +2,9 @@
 
 namespace Gcoop\Log;
 
-use Gmponos\GuzzleLogger\Handler\HandlerInterface;
-use Gmponos\GuzzleLogger\Handler\Exception\UnsupportedException;
-use Gmponos\GuzzleLogger\Handler\LogLevel\LogLevelStrategy as LogLevelStrategy;
-use Gmponos\GuzzleLogger\Handler\LogLevel\LogLevelStrategyInterface;
+use GuzzleLogMiddleware\Handler\HandlerInterface;
+use GuzzleLogMiddleware\Handler\LogLevelStrategy\ThresholdStrategy;
+use GuzzleLogMiddleware\Handler\LogLevelStrategy\LogLevelStrategyInterface;
 use GuzzleHttp\TransferStats;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;
@@ -90,7 +89,7 @@ final class GcoopArrayHandler implements HandlerInterface
             return;
         }
 
-        throw new UnsupportedException();
+        throw new \RuntimeException();
     }
 
     /**
