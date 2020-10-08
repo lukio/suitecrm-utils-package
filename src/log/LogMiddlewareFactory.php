@@ -11,7 +11,7 @@ use Monolog\Formatter\LineFormatter;
 final class LogMiddlewareFactory
 {
 
-    public static function get(string $wsFileName, string $current_user): LoggerMiddleware
+    public static function get(string $wsFileName, string $current_user): LogMiddleware
     {
         $logger = new Logger('GCA-webservices');
         $stream = new StreamHandler(
