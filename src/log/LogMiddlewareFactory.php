@@ -2,7 +2,8 @@
 
 namespace Gcoop\Log;
 
-use Gmponos\GuzzleLogger\Middleware\LoggerMiddleware;
+use GuzzleLogMiddleware\LoggerMiddleware;
+use GuzzleLogMiddleware\Handler\MultiRecordArrayHandler;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\LineFormatter;
@@ -20,7 +21,7 @@ final class LogMiddlewareFactory
         $format = "[%datetime%] [{$current_user}] %message% %context%\n";
         $stream->setFormatter(new LineFormatter($format));
         $logger->pushHandler($stream);
-        $handler = new GcoopArrayHandler();
+        $handler = new MultiRecordArrayHandler();
         $middleware = new LoggerMiddleware($logger, $handler);
 
         return $middleware;
