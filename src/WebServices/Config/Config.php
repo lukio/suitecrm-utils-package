@@ -40,6 +40,11 @@ final class Config implements ConfigInterface
         return (int) $this->config['cache_lifetime'];
     }
 
+    public function getHeaders() :array
+    {
+        return $this->config['headers'];
+    }
+
     public function getValueByKey(string $key)
     {
         if(!empty($key)) {

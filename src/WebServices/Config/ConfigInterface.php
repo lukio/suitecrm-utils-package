@@ -9,4 +9,5 @@ interface ConfigInterface
     public function getWebServiceName() :string;
     public function getCacheLifeTime() :int;
     public function getValueByKey(string $key);
+    public function getHeaders() :array;
 }
